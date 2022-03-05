@@ -36,7 +36,17 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    
+    int i =0;
+
+   for(i=0; i < parrA->size; i++)
+
+   {
+       
+    scanf("%d",&parrA->size);
+
+
+    }
+
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
