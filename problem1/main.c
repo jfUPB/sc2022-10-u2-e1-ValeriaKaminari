@@ -86,13 +86,20 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
                 if (boolean == 0)
                 {
                     Arrayr[conteo] = arrIn2->pdata[j];
-                    count++;
+                    conteo++;
                     arrOut->size ++;
                 }
             }
         }
     }  
     
+    arrOut->pdata = malloc(sizeof(int)*arrOut->size); 
+
+    for (int i = 0; i < arrOut->size; i++)
+    {
+        *(arrOut->pdata+i) = Arrayr[i];
+    }
+}
 
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
