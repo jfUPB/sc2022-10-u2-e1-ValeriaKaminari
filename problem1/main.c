@@ -41,15 +41,15 @@ void getArray(struct array *parr)
    int tamaño;
    scanf("%d",&tamaño);
    
-   parr->size=tamaño
-   int Arrayx[tamaño]
+   parr->size=tamaño;
+   int Arrayx[tamaño];
    parr->pdata = malloc(sizeof(int) * tamaño);
    for(i=0; i < parr->size; i++)
 
    {
        
     scanf("%d",&Arrayx[i]);
-    parr->pdata[i] = Arrayx
+    parr->pdata[i] = Arrayx[i];
 
 
     }
