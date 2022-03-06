@@ -38,12 +38,12 @@ void getArray(struct array *parr)
 {
     int i =0;
 
-   int tamaño;
-   scanf("%d",&tamaño);
+   int tamano;
+   scanf("%d",&tamano);
    
-   parr->size=tamaño;
-   int Arrayx[tamaño];
-   parr->pdata = malloc(sizeof(int) * tamaño);
+   parr->size=tamano;
+   int Arrayx[tamano];
+   parr->pdata = malloc(sizeof(int) * tamano);
    for(i=0; i < parr->size; i++)
 
    {
