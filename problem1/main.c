@@ -36,13 +36,71 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    
+    int i =0;
+
+   int tamano;
+   scanf("%d",&tamano);
+   
+   parr->size=tamano;
+   int Arrayx[tamano];
+   
+   parr->pdata = malloc(sizeof(int) * tamano);
+   
+   
+   for(i=0; i < parr->size; i++)
+
+   {
+    scanf("%d",&Arrayx[i]);
+    parr->pdata[i] = Arrayx[i];
+   }
+
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
+    int size;
+    arrOut->size = 0;
+
+    if(arrIn1->size>arrIn2->size) size = arrIn1->size;
+    else if(arrIn2->size>arrIn1->size) size = arrIn2->size;
+    else if (arrIn2->size == arrIn1->size) size = arrIn2->size;
+
+
+    int Arrayr[size];
+    for (int i = 0; i < size; i++) Arrayr[i]=-1;
     
+    int conteo=0;
+
+    for(int i=0; i<arrIn1->size;i++){
+        for(int j=0; j<arrIn2->size;j++){
+            if(arrIn1->pdata[i]==arrIn2->pdata[j]) 
+            {
+                int boolean = 0;
+                for (int k = 0; k < size; k++){
+                    if(arrIn1->pdata[i] == Arrayr[k])
+                    {
+                        k = size;
+                        boolean = 1;
+                    }
+                }
+                if (boolean == 0)
+                {
+                    Arrayr[conteo] = arrIn2->pdata[j];
+                    conteo++;
+                    arrOut->size ++;
+                }
+            }
+        }
+    }  
+    
+    arrOut->pdata = malloc(sizeof(int)*arrOut->size); 
+
+    for (int i = 0; i < arrOut->size; i++)
+    {
+        *(arrOut->pdata+i) = Arrayr[i];
+    }
 }
+
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
 {
